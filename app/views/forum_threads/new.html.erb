@@ -1,0 +1,7 @@
+<%= form_for @forum_thread do |f| %>
+	<%= f.text_field :subject, placeholder: "Enter subject"%>
+	<%= f.fields_for :forum_posts do |fp|%>
+		 <%= fp.text_area :body, placeholder: "Add a comment", rows: 10 %>
+	<%end%>
+	<%=f.submit%>
+<%end%>

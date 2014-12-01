@@ -1,0 +1,7 @@
+  <h1><%= @forum_thread.subject %></h1>
+  <p >Created by <%= "@forum_thread.user.name" %></p>
+  <%= render @forum_thread.forum_posts %>
+
+  <hr />
+  <%= render partial:'forum_posts/form' %>
+  
