@@ -1,7 +1,10 @@
 class ForumThreadsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index,:show]
+  
   def index
     @forum_threads = ForumThread.all
   end
+
   def new
     @forum_thread = ForumThread.new
     @forum_thread.forum_posts.new

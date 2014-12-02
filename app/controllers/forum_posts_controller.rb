@@ -1,6 +1,7 @@
 class ForumPostsController < ApplicationController
   # before_action :authenticate_user!
   before_action :set_forum_thread
+  before_filter :authenticate_user!
 
   def create
     @forum_post = @forum_thread.forum_posts.new(forum_post_params)
