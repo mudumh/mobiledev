@@ -7,7 +7,9 @@
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <div id="container">
+    <div id="wrapper">
+    <%=render 'layouts/wrapper'%>
+    <div id="page-content-wrapper">
       <div id="user_nav">
         <% if user_signed_in? %>
           Logged in as <strong><%= current_user.email %></strong>.
@@ -25,5 +27,18 @@
 
       <%= yield %>
     </div>
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
   </body>
+
 </html>
