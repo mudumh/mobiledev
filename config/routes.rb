@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :forum_threads do
     resources :forum_posts
   end
+  resources :news_items, only:[:index,:show,:create,:new]
   
   
   # The priority is based upon order of creation: first created -> highest priority.

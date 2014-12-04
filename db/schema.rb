@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202203640) do
+ActiveRecord::Schema.define(version: 20141204225741) do
 
   create_table "forum_posts", force: true do |t|
     t.text     "body"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20141202203640) do
 
   create_table "forum_threads", force: true do |t|
     t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news_items", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "upvotes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
