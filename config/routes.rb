@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   devise_for :users
   root to: "forum_threads#index"
 
@@ -6,6 +8,8 @@ Rails.application.routes.draw do
     resources :forum_posts
   end
   resources :news_items, only:[:index,:show,:create,:new]
+  resources :tutorials, only:[:index,:show,:create,:new]
+  resources :tools, only:[:index,:show,:create,:new]
   
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,10 @@
+<%= form_for @tool do |f|%>
+	<%= f.label :title %>
+	<%= f.text_field :title%>
+	
+	<%= f.label :url %>
+	<%= f.text_field :url%>
+	<%= f.label :desc %>
+	<%= f.text_area :desc%>
+  <%= f.submit%>
+<% end%>
