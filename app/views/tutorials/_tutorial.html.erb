@@ -1,3 +1,7 @@
 <%= link_to tutorial.url do %>
-  <h3><%= tutorial.title %></h3>
+  <h3>
+  	<%= tutorial.title%> 
+  	<%= tutorial.get_upvotes.size %>
+  	<%=link_to "upvote", like_tutorial_path(tutorial), method: :put%>
+  </h3>
 <% end %>

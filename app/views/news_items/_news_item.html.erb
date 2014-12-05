@@ -1,3 +1,8 @@
 <%= link_to news_item.url, :target => "_blank" do %>
-  <h3><%= news_item.title %></h3>
+  <h3>
+  	<%= news_item.title %> 
+  	<%= news_item.get_upvotes.size %>
+  	<%=link_to "upvote", like_news_item_path(news_item), method: :put%>
+  </h3>
+	
 <% end %>

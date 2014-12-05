@@ -10,6 +10,34 @@ Rails.application.routes.draw do
   resources :news_items, only:[:index,:show,:create,:new]
   resources :tutorials, only:[:index,:show,:create,:new]
   resources :tools, only:[:index,:show,:create,:new]
+
+  resources :news_items do
+    member do
+    put "like", to: "news_items#upvote"
+    put "dislike", to: "news_items#downvote"
+    end
+  end
+
+  resources :tutorials do
+    member do
+    put "like", to: "tutorials#upvote"
+    put "dislike", to: "tutorials#downvote"
+    end
+  end
+
+  resources :tools do
+    member do
+    put "like", to: "tools#upvote"
+    put "dislike", to: "tools#downvote"
+    end
+  end
+
+  resources :forum_thread do
+    member do
+    put "like", to: "forum_threads#upvote"
+    put "dislike", to: "forum_threads#downvote"
+    end
+  end
   
   
   # The priority is based upon order of creation: first created -> highest priority.

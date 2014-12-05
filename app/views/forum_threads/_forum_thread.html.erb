@@ -1,3 +1,9 @@
 <%= link_to forum_thread do %>
-  <h3><%= forum_thread.subject %></h3>
+  <h3>
+  	<%= forum_thread.subject %> 
+  	<%= forum_thread.get_upvotes.size %>
+  	<%=link_to "upvote", like_forum_thread_path(forum_thread), method: :put%>
+  </h3>
 <% end %>
+
+  

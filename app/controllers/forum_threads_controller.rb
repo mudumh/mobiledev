@@ -29,6 +29,13 @@ class ForumThreadsController < ApplicationController
    
   end
 
+  def upvote
+    @forum_thread = ForumThread.find(params[:id])
+    @forum_thread.upvote_by current_user
+    @forum_thread.save
+    redirect_to forum_threads_path
+  end
+
   private
 
     def set_forum_thread
