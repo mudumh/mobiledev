@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aesthetics: 1
+  easeofuse: 1
+  responsiveness: 1
+  functionality: 1
+  innovativeness: 1
+
+two:
+  aesthetics: 1
+  easeofuse: 1
+  responsiveness: 1
+  functionality: 1
+  innovativeness: 1

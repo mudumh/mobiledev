@@ -16,7 +16,6 @@ class TutorialsController < ApplicationController
       flash[:error] = 'something wrong'
       render 'new'
     end
-
   end
 
   def show

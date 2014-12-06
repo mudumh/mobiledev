@@ -1,0 +1,13 @@
+  <h1><%= @review_request.title %></h1>
+  <p >Link To App: <%= @review_request.url %></p>
+
+
+  <%if user_signed_in?%>
+  <p >Created by <%= current_user.username %></p>
+  <%end%>
+  
+  <%= render @review_request.review_responses %>
+  
+  <hr />
+  <%= render partial:'review_responses/form' %>
+  

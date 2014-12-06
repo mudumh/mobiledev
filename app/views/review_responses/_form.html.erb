@@ -1,0 +1,9 @@
+<%= form_for [@review_request, @review_response] do |f| %>
+  <div >
+    <%= f.text_area :feedback, placeholder: "Enter your feedback", rows: 10, class: "form-control" %>
+  </div>
+
+  <div >
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

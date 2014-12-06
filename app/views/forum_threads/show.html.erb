@@ -1,5 +1,7 @@
   <h1><%= @forum_thread.subject %></h1>
+  <%if user_signed_in?%>
   <p >Created by <%= current_user.username %></p>
+  <%end%>
   <%= render @forum_thread.forum_posts %>
 
   <hr />

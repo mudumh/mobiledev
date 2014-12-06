@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205205714) do
+ActiveRecord::Schema.define(version: 20141206042024) do
 
   create_table "forum_posts", force: true do |t|
     t.text     "body"
@@ -32,6 +32,27 @@ ActiveRecord::Schema.define(version: 20141205205714) do
     t.integer  "upvotes"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "review_requests", force: true do |t|
+    t.text     "feedback_request"
+    t.string   "title"
+    t.string   "url"
+    t.string   "platform"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "review_responses", force: true do |t|
+    t.integer  "aesthetics"
+    t.integer  "easeofuse"
+    t.integer  "responsiveness"
+    t.integer  "functionality"
+    t.integer  "innovativeness"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "review_request_id"
+    t.text     "feedback"
   end
 
   create_table "tools", force: true do |t|
