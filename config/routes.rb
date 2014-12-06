@@ -42,6 +42,8 @@ Rails.application.routes.draw do
     
     end
   end
+
+  get 'review/:filter', to: 'review_requests#index', as: :request_filter
   
   
   # The priority is based upon order of creation: first created -> highest priority.

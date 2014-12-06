@@ -5,7 +5,17 @@ class ReviewRequestsController < ApplicationController
   end
   
   def index
-    @review_requests = ReviewRequest.all
+     
+    if params[:filter] == 'All' || params[:filter] == nil
+      @review_requests = ReviewRequest.all
+    else
+      @review_requests = ReviewRequest.where(platform: params[:filter])
+      
+      if @review_requests.length == 0 
+          flash[:notice] = 'No requests for this platform'
+      end  
+    end
+    
   end
   
   def show

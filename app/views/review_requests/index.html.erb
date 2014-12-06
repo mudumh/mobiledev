@@ -1,2 +1,12 @@
 <%=link_to 'New Request', new_review_request_path%>
+
+<%=link_to 'All',request_filter_path('All')%>
+<%=link_to 'Android',request_filter_path('Android')%>
+<%=link_to 'iOS',request_filter_path('iOS')%>
+<%=link_to 'Windows',request_filter_path('Windows')%>
+<%=link_to 'Others',request_filter_path('Others')%>
+<% if @review_requests.length >0 %>
 <%= render @review_requests%>
+<% else %>
+<%= flash[:notice] %>
+<%end%>
