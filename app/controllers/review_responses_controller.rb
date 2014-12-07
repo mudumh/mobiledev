@@ -19,7 +19,7 @@ class ReviewResponsesController < ApplicationController
   private 
 
   def review_response_params
-    params.require(:review_response).permit(:feedback)
+    params.require(:review_response).permit(:feedback,:responsiveness,:easeofuse,:innovativeness,:functionality,:aesthetics)
   end
   
   def set_review_request

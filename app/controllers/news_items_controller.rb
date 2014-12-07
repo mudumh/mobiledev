@@ -2,10 +2,16 @@ class NewsItemsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index,:show]
   def new
     @news_item = NewsItem.new
+
   end
   
   def index
     @news_items = NewsItem.all
+    if params[:query]
+      @news_items = NewsItem.text_search(params[:query])
+    else
+      @news_items = NewsItem.all
+    end 
   end
   
   def show

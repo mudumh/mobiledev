@@ -1,4 +1,13 @@
 <%= div_for review_response do %>
   
   <p><%= review_response.feedback %></p>
+  <p>
+  	The responsiveness rating:
+  	<%= review_response.responsiveness %>
+  	<%= review_response.easeofuse %>
+  	<%= review_response.innovativeness %>
+  	<%= review_response.functionality %>
+  	<%= review_response.aesthetics %>
+  </p>
+
 <% end %>

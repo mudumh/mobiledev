@@ -28,13 +28,25 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'devise'
 gem 'acts_as_votable', '~> 0.10.0'
+
+#fulltext searching based on pg db
+gem 'pg_search'
+gem 'simple_form'
+
 group :development do 
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'byebug'
+  gem 'pg',             '0.17.1'
   
   
+end
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+  #this is a "good" production grade server for rails
+  gem 'unicorn',        '4.8.3'
 end
 
 # Use ActiveModel has_secure_password
