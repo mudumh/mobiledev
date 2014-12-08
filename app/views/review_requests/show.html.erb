@@ -3,10 +3,20 @@
 
 
   <%if user_signed_in?%>
-  <p >Created by <%= current_user.username %></p>
+  <p >Created by <%= "the creater of this post ?"%></p>
   <%end%>
+<<<<<<< Updated upstream
   
   <%= render @review_request.review_responses %>
+=======
+    <% @responses = @review_request.review_responses%>
+    <%= average_rating(@review_request.id,:responsiveness) %>
+    <%= average_rating(@review_request.id,:easeofuse) %>
+    <%= average_rating(@review_request.id,:innovativeness) %>
+    <%= average_rating(@review_request.id,:functionality) %>
+    <%= average_rating(@review_request.id,:aesthetics) %>
+    <%= render @review_request.review_responses %>
+>>>>>>> Stashed changes
   
   <hr />
   <%= render partial:'review_responses/form' %>
