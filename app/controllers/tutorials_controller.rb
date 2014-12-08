@@ -5,7 +5,11 @@ class TutorialsController < ApplicationController
   end
 
   def index
-    @tutorials = Tutorial.all
+    if params[:query]
+      @tutorials = Tutorial.text_search(params[:query])
+    else
+      @tutorials = Tutorial.all
+    end
   end
 
   def create

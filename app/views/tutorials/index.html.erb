@@ -1,2 +1,13 @@
 <%=link_to 'Submit', new_tutorial_path%>
+
+<%if params[:query] != nil%>
+	<%=link_to 'All Tutorials', tutorials_path%>
+<%end%>
+
+<%= form_tag tutorials_path, method: :get do %>
+    <%= text_field_tag :query, params[:query],
+    		:autocomplete => :off,:placeholder => "Search ",:class => "searchfield input-block-level form-control" %> 
+  	<%= submit_tag "Search",value: "Search", name: nil,class: "btn " %>
+<% end %>
+
 <%= render @tutorials%>

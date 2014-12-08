@@ -2,6 +2,19 @@
   <div >
     <%= f.text_area :feedback, placeholder: "Enter your feedback", rows: 10, class: "form-control" %>
   </div>
+   
+  
+  <%['responsiveness','easeofuse','innovativeness','functionality','aesthetics'].each do|parameter| %>
+ 		<label > <%= parameter%></label>
+  	<div class="form_row">
+ 			<% [ 1, 2, 3, 4, 5 ].each do |rating| %>
+    		
+    		<%= f.label parameter, rating %>
+      	<%= f.radio_button parameter, rating  %> 
+    	<% end %>
+  	</div>
+  <%end%>
+
 
   <div >
     <%= f.submit class: "btn btn-primary" %>

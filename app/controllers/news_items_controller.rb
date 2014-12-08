@@ -6,6 +6,11 @@ class NewsItemsController < ApplicationController
   
   def index
     @news_items = NewsItem.all
+    if params[:query]
+      @news_items = NewsItem.text_search(params[:query])
+    else
+      @news_items = NewsItem.all
+    end 
   end
   
   def show
