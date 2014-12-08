@@ -1,7 +1,7 @@
 class ReviewRequestsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index,:show]
   def new
-    @review_request = ReviewRequest.new
+    @review_request = current_user.review_requests.new
   end
   
   def index
@@ -25,7 +25,7 @@ class ReviewRequestsController < ApplicationController
 
   def create
 
-    @review_request = ReviewRequest.new(review_request_params)
+    @review_request = current_user.review_requests.new(review_request_params)
     if @review_request.save
         redirect_to review_requests_path   
     else

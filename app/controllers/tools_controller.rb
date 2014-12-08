@@ -1,7 +1,7 @@
 class ToolsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index,:show]
   def new
-    @tool = Tool.new
+    @tool = current_userTool.new
   end
 
   def index
