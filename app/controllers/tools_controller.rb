@@ -1,7 +1,7 @@
 class ToolsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index,:show]
   def new
-    @tool = current_userTool.new
+    @tool = current_user.tools.new
   end
 
   def index
@@ -9,7 +9,7 @@ class ToolsController < ApplicationController
   end
 
   def create
-    @tool = Tool.new(tool_params)
+    @tool = current_user.tools.new(tool_params)
     if @tool.save
       redirect_to tools_path
     else
