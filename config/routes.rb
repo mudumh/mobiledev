@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   end
 
   get 'review/:filter', to: 'review_requests#index', as: :request_filter
+  resources :users, only: [:show,:index]
   
   
   # The priority is based upon order of creation: first created -> highest priority.
