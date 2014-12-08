@@ -5,7 +5,7 @@ class NewsItemsController < ApplicationController
   end
   
   def index
-    @news_items = NewsItem.all
+    
     if params[:query]
       @news_items = NewsItem.text_search(params[:query])
     else

@@ -5,7 +5,12 @@ class ToolsController < ApplicationController
   end
 
   def index
-    @tools = Tool.all
+    if params[:query]
+      @tools = Tool.text_search(params[:query])
+    else
+      @tools = Tool.all
+    end
+    
   end
 
   def create
