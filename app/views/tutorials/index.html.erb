@@ -5,9 +5,16 @@
 <%end%>
 
 <%= form_tag tutorials_path, method: :get do %>
+    
+    <div class= "col-md-5 col-xs-6">
     <%= text_field_tag :query, params[:query],
     		:autocomplete => :off,:placeholder => "Search ",:class => "searchfield input-block-level form-control" %> 
+    </div>		
+    <div class= "col-md-1 col-xs-1">
   	<%= submit_tag "Search",value: "Search", name: nil,class: "btn " %>
+  	</div>
 <% end %>
 
+<div class= "col-md-12 col-xs-12">
 <%= render @tutorials%>
+</div>

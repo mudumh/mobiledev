@@ -1,4 +1,28 @@
-<%= @user.username%>
+<div>
+	<p>
+	<%= @user.username%>
+	</p>
+</div>
+
+
+
+<div>
+<p>News Items</p>
 <%= render @user.news_items%>
+</div>
+
+<div>
+<p>Review Requests:</p>
 <%= render @user.review_requests%>
+</div>
+
+<div>
+<p>Tools:</p>
 <%= render @user.tools%>
+</div>
+
+<div>
+<p>Tutorials:</p>
+<%= render @user.tutorials%>
+</div>
+>>>>>>> user-scoping
