@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   has_many :news_items
   has_many :review_requests
   has_many :tools
+  has_many :tutorials
 end

@@ -1,7 +1,7 @@
 class TutorialsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index,:show]
   def new
-  @tutorial = Tutorial.new
+  @tutorial = current_user.tutorials.new
   end
 
   def index
@@ -13,7 +13,7 @@ class TutorialsController < ApplicationController
   end
 
   def create
-    @tutorial = Tutorial.new(tutorial_params)
+    @tutorial = current_user.tutorials.new(tutorial_params)
     if @tutorial.save
       redirect_to tutorials_path
     else
