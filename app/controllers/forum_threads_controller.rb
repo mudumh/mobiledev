@@ -31,7 +31,7 @@ class ForumThreadsController < ApplicationController
 
   def upvote
     @forum_thread = ForumThread.find(params[:id])
-    @forum_thread.upvote_by current_user
+    @forum_thread.vote_by :voter => current_user
     @forum_thread.save
     redirect_to forum_threads_path
   end

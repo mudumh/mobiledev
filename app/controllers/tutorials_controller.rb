@@ -26,9 +26,9 @@ class TutorialsController < ApplicationController
   end
 
   def upvote
-    @tutorials = Tutorial.find(params[:id])
-    @tutorials.upvote_by current_user
-    @tutorials.save
+    @tutorial = Tutorial.find(params[:id])
+    @tutorial.vote_by :voter => current_user
+    @tutorial.save
     redirect_to tutorials_path
   end
   private

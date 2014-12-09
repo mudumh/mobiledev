@@ -1,3 +1,4 @@
+<div class="container">
 <%=link_to 'New Request', new_review_request_path%>
 
 <%=link_to 'All',request_filter_path('All')%>
@@ -5,8 +6,12 @@
 <%=link_to 'iOS',request_filter_path('iOS')%>
 <%=link_to 'Windows',request_filter_path('Windows')%>
 <%=link_to 'Others',request_filter_path('Others')%>
+</div>
+
 <% if @review_requests.length >0 %>
-<%= render @review_requests%>
+<div class="container">
+	<%= render @review_requests%>
+</div>
 <% else %>
 <%= flash[:notice] %>
 <%end%>

@@ -2,10 +2,23 @@
 <%= link_to forum_thread do %>
   <h3>
   	<%= forum_thread.subject %> 
-  	<%= link_to like_forum_thread_path(forum_thread), method: :put, class: "" do %>
-    	<span class="glyphicon glyphicon-arrow-up"></span> 
-    <% end %>
-    <%= forum_thread.get_upvotes.size %>  	
+  	<%= forum_thread.get_upvotes.size %> 
+    <% if forum_thread.find_votes_for(:voter => current_user).size == 0 %>
+      <%= link_to like_forum_thread_path(forum_thread), method: :put, class: "" do %>
+      <span class="glyphicon glyphicon-arrow-up" 
+            style="color: rgb(222, 79, 34); font-size:24px;">
+      </span> 
+      <% end %>
+   
+    <% else %>
+    <%= link_to like_forum_thread_path(forum_thread), method: :put, class: "" do %>
+      <span class="glyphicon glyphicon-arrow-up" 
+            style="color: rgb(255, 133, 52);font-size:24px;">
+      </span> 
+      <% end %>
+    
+    <%end%>
+     	
   	
   </h3>
 <% end %>
@@ -18,4 +31,3 @@
 	</span>
 	
 </div>
-  

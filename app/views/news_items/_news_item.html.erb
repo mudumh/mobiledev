@@ -5,12 +5,16 @@
   	<%= news_item.get_upvotes.size %>
   	<% if news_item.find_votes_for(:voter => current_user).size == 0 %>
   		<%= link_to like_news_item_path(news_item), method: :put, class: "" do %>
-    	<span class="glyphicon glyphicon-arrow-up" style="color: rgb(222, 79, 34); font-size:24px;"></span> 
+    	<span class="glyphicon glyphicon-arrow-up" 
+    				style="color: rgb(222, 79, 34); font-size:24px;">
+    	</span> 
     	<% end %>
-    <%else%>
-    	 
-    	<span class="glyphicon glyphicon-arrow-up" style="color: rgb(255, 133, 52);font-size:24px;"></span> 
-    	
+    <% else %>
+    <%= link_to like_news_item_path(news_item), method: :put, class: "" do %>
+    	<span class="glyphicon glyphicon-arrow-up" 
+    				style="color: rgb(255, 133, 52);font-size:24px;">
+    	</span> 
+      <% end %>
     <%end%>
   </h3>
 	<%end%>

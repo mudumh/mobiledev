@@ -3,9 +3,21 @@
   <h3>
   	<%= tool.title%> 
   	<%= tool.get_upvotes.size %>
-  	<%= link_to like_tool_path(tool), method: :put, class: "" do %>
-    	<span class="glyphicon glyphicon-arrow-up"></span> 
-    <% end %>
+    <% if tool.find_votes_for(:voter => current_user).size == 0 %>
+      <%= link_to like_tool_path(tool), method: :put, class: "" do %>
+      <span class="glyphicon glyphicon-arrow-up" 
+            style="color: rgb(222, 79, 34); font-size:24px;">
+      </span> 
+      <% end %>
+   
+    <% else %>
+    <%= link_to like_tool_path(tool), method: :put, class: "" do %>
+      <span class="glyphicon glyphicon-arrow-up" 
+            style="color: rgb(255, 133, 52);font-size:24px;">
+      </span> 
+      <% end %>
+    
+    <%end%>
   </h3>
 <% end %>
 </div>
@@ -18,3 +30,4 @@
 	</span>
 	
 </div>
+

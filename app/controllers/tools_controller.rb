@@ -29,7 +29,7 @@ class ToolsController < ApplicationController
 
    def upvote
     @tool = Tool.find(params[:id])
-    @tool.upvote_by current_user
+    @tool.vote_by :voter => current_user
     @tool.save
     redirect_to tools_path
   end

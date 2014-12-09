@@ -1,9 +1,19 @@
+<div class = "row">
 <%= link_to review_request do %>
   <h3>
   	<%= review_request.title %> 
   	<%= review_request.platform %> 
-  	
   </h3>
 <% end %>
+</div>
+
+<div class = "row">
+	<%= date_posted(review_request.created_at)%>
+		<span>
+		 posted by:
+		<%= link_to review_request.user.username, user_path(review_request.user) %>
+		</span>	
+</div>
+
 
   
