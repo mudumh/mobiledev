@@ -1,3 +1,4 @@
+<div class="container">
 <%=link_to 'Submit', new_news_item_path%>
 <%if params[:query] != nil%>
 	<%=link_to 'All News', news_items_path%>
@@ -12,6 +13,7 @@
   	<%= submit_tag "Search",value: "Search", name: nil,class: "btn " %>
   	</div>
 <% end %>
-<div class= "col-md-12 col-xs-12">
-<%= render @news_items%>
+</div>
+<div class="container">
+	<%= render @news_items%>
 </div>

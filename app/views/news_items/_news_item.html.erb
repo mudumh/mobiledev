@@ -1,8 +1,20 @@
-<%= link_to news_item.url, :target => "_blank" do %>
+<div class = "row">
+	<%= link_to news_item.url, :target => "_blank" do %>
   <h3>
   	<%= news_item.title %> 
   	<%= news_item.get_upvotes.size %>
-  	<%=link_to "upvote", like_news_item_path(news_item), method: :put%>
+  	<%= link_to like_news_item_path(news_item), method: :put, class: "" do %>
+    	<span class="glyphicon glyphicon-arrow-up"></span> 
+    <% end %>
   </h3>
+	<% end %>
+</div>
+
+<div class = "row">
+	<%=date_posted(news_item.created_at)%>
+	<span>
+		 posted by:
+		<%= link_to news_item.user.username, user_path(news_item.user) %>
+	</span>
 	
-<% end %>
+</div>

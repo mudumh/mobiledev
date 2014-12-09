@@ -1,7 +1,21 @@
-<%= link_to tutorial.url do %>
+
+<div class = "row">
+	<%= link_to tutorial.url do %>
   <h3>
   	<%= tutorial.title%> 
   	<%= tutorial.get_upvotes.size %>
-  	<%=link_to "upvote", like_tutorial_path(tutorial), method: :put%>
+  	<%= link_to like_tutorial_path(tutorial), method: :put, class: "" do %>
+    	<span class="glyphicon glyphicon-arrow-up"></span> 
+    <% end %>
   </h3>
 <% end %>
+</div>
+
+<div class = "row">
+	<%=date_posted(tutorial.created_at)%>
+	<span>
+		 posted by:
+		<%= link_to tutorial.user.username, user_path(tutorial.user) %>
+	</span>
+	
+</div>
