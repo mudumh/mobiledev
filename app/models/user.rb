@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   has_many :review_requests
   has_many :tools
   has_many :tutorials
+  has_many :forum_threads
 end

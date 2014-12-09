@@ -1,11 +1,21 @@
+<div class="row">
 <%= link_to forum_thread do %>
   <h3>
-  	 <%= forum_thread.get_upvotes.size %>  	
   	<%= forum_thread.subject %> 
   	<%= link_to like_forum_thread_path(forum_thread), method: :put, class: "" do %>
     	<span class="glyphicon glyphicon-arrow-up"></span> 
     <% end %>
+    <%= forum_thread.get_upvotes.size %>  	
+  	
   </h3>
 <% end %>
-
+</div>
+<div class = "row">
+	<%= date_posted(forum_thread.created_at)%>
+	<span>
+		 posted by:
+		<%= link_to forum_thread.user.username, user_path(forum_thread.user) %>
+	</span>
+	
+</div>
   

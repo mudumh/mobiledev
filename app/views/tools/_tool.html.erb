@@ -1,3 +1,4 @@
+<div class="row">
 <%= link_to tool.url do %>
   <h3>
   	<%= tool.title%> 
@@ -7,3 +8,13 @@
     <% end %>
   </h3>
 <% end %>
+</div>
+
+<div class = "row">
+	<%=date_posted(tool.created_at)%>
+	<span>
+		 posted by:
+		<%= link_to tool.user.username, user_path(tool.user) %>
+	</span>
+	
+</div>

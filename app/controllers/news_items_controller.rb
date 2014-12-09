@@ -29,7 +29,8 @@ class NewsItemsController < ApplicationController
     
   def upvote
     @news_item = NewsItem.find(params[:id])
-    @news_item.upvote_by current_user
+    #@news_item.upvote_by current_user
+    @news_item.vote_by :voter => current_user
     @news_item.save
     redirect_to news_items_path
   end

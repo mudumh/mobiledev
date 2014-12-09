@@ -6,7 +6,7 @@ class ForumThreadsController < ApplicationController
   end
 
   def new
-    @forum_thread = ForumThread.new
+    @forum_thread = current_user.forum_threads.new()
     @forum_thread.forum_posts.new
   
   end
@@ -19,7 +19,7 @@ class ForumThreadsController < ApplicationController
 
   def create
     
-    @forum_thread = ForumThread.new(forum_thread_params)
+    @forum_thread = current_user.forum_threads.new(forum_thread_params)
     
     if @forum_thread.save
       redirect_to @forum_thread

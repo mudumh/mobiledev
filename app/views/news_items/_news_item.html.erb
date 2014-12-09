@@ -3,18 +3,24 @@
   <h3>
   	<%= news_item.title %> 
   	<%= news_item.get_upvotes.size %>
-  	<%= link_to like_news_item_path(news_item), method: :put, class: "" do %>
-    	<span class="glyphicon glyphicon-arrow-up"></span> 
-    <% end %>
+  	<% if news_item.find_votes_for(:voter => current_user).size == 0 %>
+  		<%= link_to like_news_item_path(news_item), method: :put, class: "" do %>
+    	<span class="glyphicon glyphicon-arrow-up" style="color: rgb(222, 79, 34); font-size:24px;"></span> 
+    	<% end %>
+    <%else%>
+    	 
+    	<span class="glyphicon glyphicon-arrow-up" style="color: rgb(255, 133, 52);font-size:24px;"></span> 
+    	
+    <%end%>
   </h3>
-	<% end %>
+	<%end%>
 </div>
 
 <div class = "row">
-	<%=date_posted(news_item.created_at)%>
+	<%= date_posted(news_item.created_at)%>
 	<span>
 		 posted by:
 		<%= link_to news_item.user.username, user_path(news_item.user) %>
 	</span>
-	
+
 </div>
