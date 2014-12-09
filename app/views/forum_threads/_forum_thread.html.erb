@@ -1,8 +1,10 @@
 <%= link_to forum_thread do %>
   <h3>
+  	 <%= forum_thread.get_upvotes.size %>  	
   	<%= forum_thread.subject %> 
-  	<%= forum_thread.get_upvotes.size %>
-  	<%=link_to "upvote", like_forum_thread_path(forum_thread), method: :put%>
+  	<%= link_to like_forum_thread_path(forum_thread), method: :put, class: "" do %>
+    	<span class="glyphicon glyphicon-arrow-up"></span> 
+    <% end %>
   </h3>
 <% end %>
 

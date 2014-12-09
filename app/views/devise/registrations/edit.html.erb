@@ -11,6 +11,13 @@
   <div class="field"><%= f.label :username %><br />
   <%= f.email_field :username %></div>
 
+  <div class="field"><%= f.label :linkedin %><br />
+  <%= f.text_field :linkedin %></div>
+
+  <div class="field"><%= f.label :twitter %><br />
+  <%= f.text_field :twitter %></div>
+
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
