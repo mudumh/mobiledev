@@ -5,6 +5,7 @@ class ForumPostsController < ApplicationController
 
   def create
     @forum_post = @forum_thread.forum_posts.new(forum_post_params)
+    @forum_post.user = current_user
     #@forum_post.user = current_user
 
     if @forum_post.save
