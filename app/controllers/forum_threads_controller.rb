@@ -1,8 +1,14 @@
+
 class ForumThreadsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index,:show]
   
   def index
-    @forum_threads = ForumThread.all
+    if params[:query]
+      @forum_threads = ForumThread.text_search(params[:query])
+    else
+      @forum_threads = ForumThread.all
+    end
+    
   end
 
   def new

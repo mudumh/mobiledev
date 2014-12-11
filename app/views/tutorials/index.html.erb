@@ -1,24 +1,18 @@
-<div class="container">
-	<%=link_to 'Submit', new_tutorial_path%>
-	
-	<%if params[:query] != nil%>
-		<%=link_to 'All Tutorials', tutorials_path%>
-	<%end%>
-	
-	<%= form_tag tutorials_path, method: :get do %>
-    
-    <div class= "col-md-5 col-xs-6">
+<div class="container-fluid">
+	<div class="row">
+		<%=link_to 'Submit', new_tutorial_path%>
+		<%if params[:query] != nil%>
+			<%=link_to 'All Tutorials', tutorials_path%>
+		<%end%>
+		<%= form_tag tutorials_path, method: :get do %>	
+    <div class= "col-md-6 col-xs-6 searchfield" >
     	<%= text_field_tag :query, params[:query],
     		:autocomplete => :off,:placeholder => "Search ",:class => "searchfield input-block-level form-control" %> 
-    </div>		
-    
-    <div class= "col-md-1 col-xs-1">
+    </div>		    
+    <div class= "col-md-1 col-xs-1 searchbutton">
   		<%= submit_tag "Search",value: "Search", name: nil,class: "btn " %>
   	</div>
-	
 	<% end %>
 </div>
-
-<div class="container">
 	<%= render @tutorials%>
 </div>

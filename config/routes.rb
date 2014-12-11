@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :news_items, only:[:index,:show,:create,:new]
   resources :tutorials, only:[:index,:show,:create,:new]
   resources :tools, only:[:index,:show,:create,:new]
+  resources :forum_threads, only:[:index,:show,:create,:new]
 
   resources :news_items do
     member do
@@ -40,10 +41,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :forum_thread do
+  resources :forum_threads do
     member do
     put "like", to: "forum_threads#upvote"
-    
     end
   end
 

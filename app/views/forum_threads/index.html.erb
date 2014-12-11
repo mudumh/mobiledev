@@ -1,6 +1,23 @@
-<div class= "container">
-<%=link_to 'New Thread', new_forum_thread_path%>
+<div class="container-fluid">
+	<div class="row">
+		<%=link_to 'New Thread', new_forum_thread_path%>
+		<%if params[:query] != nil%>
+	   <%=link_to 'All Posts', forum_threads_path%>
+    <%end%>
+    
+    <%= form_tag forum_threads_path, method: :get do %>
+      <div class= "col-md-6 col-xs-6 searchfield" >
+        <%= text_field_tag :query, params[:query],
+    		:autocomplete => :off,:placeholder => "Search ",:class => "searchfield input-block-level form-control" %> 
+    </div>		
+    
+    <div class= "col-md-1 col-xs-1 searchbutton">
+  	 <%= submit_tag "Search",value: "Search", name: nil,class: "btn " %>
+  	 </div>
+    <% end %>
+
+
 </div>
-<div class= "container">
+
 	<%= render @forum_threads%>
 </div>
