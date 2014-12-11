@@ -87,6 +87,9 @@
     background: none;
 }
 
+a#menu-toggle{
+    display:inline;
+}
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
@@ -111,5 +114,8 @@
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
+    }
+    a#menu-toggle{
+    display:none;
     }
 }
