@@ -55,6 +55,9 @@ Rails.application.routes.draw do
   resources :news_items do 
     resources :comments
   end
+  resources :tools do 
+    resources :comments
+  end
   
   
   # The priority is based upon order of creation: first created -> highest priority.

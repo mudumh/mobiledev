@@ -25,6 +25,10 @@ class ToolsController < ApplicationController
   end
 
   def show
+    @tool = Tool.find(params[:id])
+    @commentable = @tool
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
    def upvote
