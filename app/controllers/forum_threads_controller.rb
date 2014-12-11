@@ -7,20 +7,20 @@ class ForumThreadsController < ApplicationController
 
   def new
     @forum_thread = current_user.forum_threads.new()
-    @forum_post = @forum_thread.forum_posts.new
-    
+      
   end
   
   def show
-     set_forum_thread
-     @forum_post = ForumPost.new
-
+    @forum_thread = ForumThread.find(params[:id])
+    @commentable = @forum_thread
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def create
     
     @forum_thread = current_user.forum_threads.new(forum_thread_params)
-    @forum_thread.forum_posts.first.user_id = current_user.id
+    #@forum_thread.forum_posts.first.user_id = current_user.id
     if @forum_thread.save
       redirect_to @forum_thread
     else
@@ -43,7 +43,6 @@ class ForumThreadsController < ApplicationController
     end
 
     def forum_thread_params
-      params.require(:forum_thread).permit(:subject, forum_posts_attributes: [:body])
+      params.require(:forum_thread).permit(:subject)
     end
-
 end

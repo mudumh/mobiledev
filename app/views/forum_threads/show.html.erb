@@ -1,12 +1,14 @@
-  <h1><%= @forum_thread.subject %></h1>
-  <%if user_signed_in?%>
-  <p >Posted by 
-  	<%= link_to @forum_thread.user.username, user_path(@forum_thread.user) %>
-  </p>
 
-  <%end%>
-  <%= render @forum_thread.forum_posts %>
+<p id="notice"><%= notice %></p>
 
-  <hr />
-  <%= render partial:'forum_posts/form' %>
-  
+<p>
+  <strong>Tool:</strong>
+  <%= render @forum_thread  %>
+</p>
+
+
+<%= link_to 'Back', forum_threads_path %>
+
+<%= render 'comments/form'%>
+<%= render 'comments/comments'%>
+

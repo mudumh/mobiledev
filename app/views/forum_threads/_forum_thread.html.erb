@@ -29,5 +29,10 @@
 		 posted by:
 		<%= link_to forum_thread.user.username, user_path(forum_thread.user) %>
 	</span>
+  <span>
+     
+    <%= link_to 'Discuss',forum_thread_path(forum_thread)  %>
+  </span>
+
 	
 </div>

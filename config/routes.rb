@@ -62,6 +62,9 @@ Rails.application.routes.draw do
   resources :tutorials do 
     resources :comments
   end
+  resources :forum_threads do 
+    resources :comments
+  end
   
   
   # The priority is based upon order of creation: first created -> highest priority.
