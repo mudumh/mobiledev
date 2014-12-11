@@ -8,12 +8,12 @@
     <%end%>
     
     <%= form_tag news_items_path, method: :get do %>
-      <div class= "col-md-5 col-xs-6">
+      <div class= "col-md-6 col-xs-6 " id="searchfield">
         <%= text_field_tag :query, params[:query],
     		:autocomplete => :off,:placeholder => "Search ",:class => "searchfield input-block-level form-control" %> 
     </div>		
     
-    <div class= "col-md-1 col-xs-1">
+    <div class= "col-md-1 col-xs-1" id="searchbutton">
   	 <%= submit_tag "Search",value: "Search", name: nil,class: "btn " %>
   	 </div>
     <% end %>
