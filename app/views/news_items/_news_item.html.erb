@@ -26,5 +26,8 @@
 		 posted by:
 		<%= link_to news_item.user.username, user_path(news_item.user) %>
 	</span>
-
+  <span>
+     posted by:
+    <%= link_to 'comments',news_item_path(news_item)  %>
+  </span>
 </div>

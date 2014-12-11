@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  get 'comments/new'
+
+  get 'comments/index'
+
+  get 'comments/create'
+
   devise_for :users
   root to: "forum_threads#index"
 
@@ -45,6 +51,10 @@ Rails.application.routes.draw do
 
   get 'review/:filter', to: 'review_requests#index', as: :request_filter
   resources :users, only: [:show,:index]
+
+  resources :news_items do 
+    resources :comments
+  end
   
   
   # The priority is based upon order of creation: first created -> highest priority.

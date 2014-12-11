@@ -13,7 +13,11 @@ class NewsItemsController < ApplicationController
     end 
   end
   
-  def show
+ def show
+    @news_item = NewsItem.find(params[:id])
+    @commentable = @news_item
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
   
   def create

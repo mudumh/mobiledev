@@ -32,7 +32,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 #fulltext searching based on pg db
 gem 'pg_search'
 gem 'simple_form'
-
+gem 'ancestry'
 group :development do 
   gem 'annotate'
   gem 'better_errors'

@@ -1,0 +1,4 @@
+<div class="row">
+<%= simple_format comment.content %>
+<%= link_to 'reply',new_news_item_comment_path(@news_item,:parent_id => comment)%>
+</div>
