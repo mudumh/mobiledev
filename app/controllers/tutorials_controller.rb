@@ -23,6 +23,10 @@ class TutorialsController < ApplicationController
   end
 
   def show
+    @tutorial = Tutorial.find(params[:id])
+    @commentable = @tutorial
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def upvote

@@ -30,5 +30,8 @@
 		 posted by:
 		<%= link_to tutorial.user.username, user_path(tutorial.user) %>
 	</span>
-	
+	<span>
+     posted by:
+    <%= link_to 'comments',tutorial_path(tutorial)  %>
+  </span>
 </div>

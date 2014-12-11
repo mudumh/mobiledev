@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tutorial:</strong>
+  <%= render @tutorial  %>
+</p>
+
+
+<%= link_to 'Back', tutorials_path %>
+
+<%= render 'comments/form'%>
+<%= render 'comments/comments'%>
+
