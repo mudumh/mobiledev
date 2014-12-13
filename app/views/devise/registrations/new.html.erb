@@ -4,26 +4,27 @@
 <div class="container-fluid">
   <%= devise_error_messages! %>
   <div class="row field ">
-    <h2>Sign up</h2>
-  </div>
+    <div class="col-xs-4 col-centered">
+      <h2>Sign up</h2>
+    </div>
   </div>
 
   <div class="row field form-group">
-    <div class="col-lg-4 col-centered">
+    <div class="col-md-4 col-xs-8 col-centered">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true,class:"form-control" %>
     </div>
   </div>
 
   <div class="row field form-group">
-    <div class="col-lg-4 col-centered">
+    <div class="col-md-4 col-xs-8 col-centered">
     <%= f.label :username %><br />
     <%= f.text_field :username,class:"form-control" %>
     </div>
   </div>
 
   <div class="field row form-group">
-    <div class="col-lg-4 col-centered">
+    <div class="col-md-4 col-xs-8 col-centered">
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -33,18 +34,26 @@
   </div>
 
   <div class="field row form-group">
-    <div class="col-lg-4 col-centered">
+    <div class="col-md-4 col-xs-8 col-centered">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off",class:"form-control" %>
     </div>
   </div>
-
-  <div class="row actions form-group">
-    <div class="col-lg-4 col-centered">
-    <%= f.submit "Sign up",class:"btn" %>
+  <div class="row">
+    <div class="col-md-4 col-xs-8 col-centered">
+      <div class="row actions form-group">
+        <div class="col-md-12 col-xs-12">
+          <%= f.submit "Sign up",class:"btn  btn-block btn-primary" %>
+        </div>
+      </div>
     </div>
   </div>
 <% end %>
 
+<div class="row ">
+    <div class="col-md-4 col-xs-8 col-centered">
 <%= render "devise/shared/links" %>
+    </div>
+</div>
+</div>
 </div>
