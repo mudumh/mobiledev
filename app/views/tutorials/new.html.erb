@@ -1,13 +1,16 @@
 <%= form_for @tutorial do |f|%>
-	
 	<div class="form-group">
-	<%=f.label :title%>
-	<%=f.text_field :title,class:'form-control'%>
+		<%=f.label 'Submit a tutorial'%>	
 	</div>
 
 	<div class="form-group">
-	<%=f.label :url,'Paste the URL of the Tutorial'%>
-	<%=f.text_field :url,class:'form-control'%>
+	
+	<%=f.text_field :title,placeholder:'Title',class:'form-control'%>
+	</div>
+
+	<div class="form-group">
+	
+	<%=f.text_field :url,placeholder:'Link to the tutorial',class:'form-control'%>
 	</div>
 	
 	<div class="form-group">
