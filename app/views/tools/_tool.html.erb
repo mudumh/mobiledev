@@ -1,5 +1,5 @@
 <div class="row">
-<%= link_to tool.url do %>
+<%= link_to tool.url,:target=>"blank" do %>
   <h3>
   	<%= tool.title%> 
   	<%= tool.get_upvotes.size %>
@@ -23,15 +23,22 @@
 </div>
 
 <div class = "row">
-	<%=date_posted(tool.created_at)%>
-	<span>
-		 posted by:
-		<%= link_to tool.user.username, user_path(tool.user) %>
-	</span>
-  <span>
-     posted by:
-    <%= link_to 'comments',tool_path(tool)  %>
+  <span class="comment">
+    <%= link_to 'Discuss',tool_path(tool)  %>
   </span>
+  <span class="postedby">
+     Posted by:
+    <%= link_to tool.user.username, user_path(tool.user) %>
+  </span>
+
+  <span class="posteddate">
+    
+	 <%=date_posted(tool.created_at)%>
+  </span> 
+
+	
+  
+
 	
 </div>
 

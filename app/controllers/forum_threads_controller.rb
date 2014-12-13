@@ -13,7 +13,6 @@ class ForumThreadsController < ApplicationController
 
   def new
     @forum_thread = current_user.forum_threads.new()
-      
   end
   
   def show

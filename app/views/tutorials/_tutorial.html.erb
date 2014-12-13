@@ -1,6 +1,6 @@
 
 <div class = "row">
-	<%= link_to tutorial.url do %>
+	<%= link_to tutorial.url,:target=>"blank" do %>
   <h3>
   	<%= tutorial.title%> 
   	<%= tutorial.get_upvotes.size %>	
@@ -25,13 +25,17 @@
 </div>
 
 <div class = "row">
-	<%=date_posted(tutorial.created_at)%>
-	<span>
-		 posted by:
-		<%= link_to tutorial.user.username, user_path(tutorial.user) %>
-	</span>
-	<span>
-     posted by:
-    <%= link_to 'comments',tutorial_path(tutorial)  %>
+  <span class="comments">
+     
+      <%= link_to 'Discuss',tutorial_path(tutorial)  %>
   </span>
+  <span class="postedby">
+     Posted by:
+      <%= link_to tutorial.user.username, user_path(tutorial.user) %>
+  </span>
+  <span class="posteddate">
+    
+	 <%=date_posted(tutorial.created_at)%>
+	</span>
+	
 </div>

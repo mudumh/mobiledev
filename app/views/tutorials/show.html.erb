@@ -1,13 +1,13 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Tutorial:</strong>
+<div class="container-fluid">
+	<p id="notice"><%= notice %></p>
   <%= render @tutorial  %>
-</p>
-
-
-<%= link_to 'Back', tutorials_path %>
+  <div class="row">
+	<%= link_to 'Back', tutorials_path %>
+	</div>
 
 <%= render 'comments/form'%>
+
 <%= render 'comments/comments'%>
+</div>
 

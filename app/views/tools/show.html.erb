@@ -1,13 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+	<div class= "row">
+		<%= link_to 'Back', tools_path %>
+	</div>
 
-<p>
-  <strong>Tool:</strong>
-  <%= render @tool  %>
-</p>
-
-
-<%= link_to 'Back', tools_path %>
+	<div class="row show">
+	<p id="notice"><%= notice %></p>
+  	<%= render @tool  %>
+	</div>
 
 <%= render 'comments/form'%>
 <%= render 'comments/comments'%>
 
+</div>

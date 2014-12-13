@@ -22,14 +22,17 @@
 </div>
 
 <div class = "row">
-	<%= date_posted(news_item.created_at)%>
-	<span>
-		 posted by:
-		<%= link_to news_item.user.username, user_path(news_item.user) %>
+  <span class="comments">
+     <%= link_to 'Discuss',news_item_path(news_item)  %>
+  </span>
+	<span class="postedby">
+		 Posted by:
+		 <%= link_to news_item.user.username, user_path(news_item.user) %>
 	</span>
-  <span>
-     posted by:
-    <%= link_to 'comments',news_item_path(news_item)  %>
+
+  <span class="posteddate">
+    
+    <%= date_posted(news_item.created_at)%>
   </span>
 </div>
 

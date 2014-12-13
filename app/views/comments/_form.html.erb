@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="col-md-6 textarea">
 <%= form_for [@commentable, @comment] do |f| %>
   <% if @comment.errors.any? %>
     <div class="error_messages">
@@ -12,10 +14,12 @@
   <%if !params[:parent_id].nil? %>
   <%= f.hidden_field :parent_id %>
   <%end%>
-  <div class="field">
-    <%= f.text_area :content, rows: 8 %>
+  <div class="form-group">
+    <%= f.text_area :content, :placeholder => "Add a comment",rows: 8,class:'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+ <div class="form-group">
+    <%=f.submit 'Comment', class: 'btn btn-primary btn-lg' %>
   </div>
 <% end %>
+  </div>
+</div>
