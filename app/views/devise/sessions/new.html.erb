@@ -3,36 +3,36 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div class="container-fluid">
   <div class="row field ">
-   <div class="col-md-4 col-xs-4">
+   <div class="col-xs-4 col-centered">
     <h2>Log in</h2>
    </div>
   </div>
 
   <div class="row field form-group">
-   <div class="col-md-4 col-xs-4">
+   <div class="col-md-4 col-xs-8 col-centered">
    
     <%= f.text_field :username,placeholder:'username', autofocus: true,class:"form-control" %>
   </div>
   </div>
 
   <div class="row field form-group">
-    <div class="col-md-4 col-xs-4">
+    <div class="col-md-4 col-xs-8 col-centered">
     <%= f.password_field :password,placeholder:'password', autocomplete: "off",class:"form-control" %>
     <div>
   </div>
 
   <% if devise_mapping.rememberable? -%>
     <div class="field row form-group">
-      <div class="col-md-6 col-xs-6">
-      <%= f.check_box :remember_me,class:"form-control" %>
-      <%= f.label :remember_me %>
+    <div class="col-md-8 col-xs-8">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, :class=>"checkbox-inline"%>
     </div>
     </div>
   <% end -%>
 
   <div class="row actions form-group">
     <div class="col-md-4 col-xs-4">
-    <%= f.submit "Log in",class:"btn btn-large btn-block" %>
+    <%= f.submit "Log in",class:"btn" %>
   </div>
   </div>
 <% end %>
