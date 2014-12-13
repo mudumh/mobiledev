@@ -1,22 +1,32 @@
 <div class = "row">
-<%= link_to review_request do %>
+	<%= link_to review_request do %>
   <h3>
-  	<%= review_request.title %> 
-  	<%= review_request.platform %> 
+  	<%= review_request.title %> |
+  	<span id="platform">	
+		<%=link_to review_request.platform,request_filter_path(review_request.platform)%>
+	</span>	
   </h3>
-<% end %>
+  
+	<% end %>
 </div>
 
 <div class = "row">
-	<%= date_posted(review_request.created_at)%>
-		<span>
-		 posted by:
-		<%= link_to review_request.user.username, user_path(review_request.user) %>
-		</span>	
-		<span>
-		
+
+
+	<span class="give_comment">	
 		<%= link_to 'Give feedback', review_request_path(review_request) %>
-		</span>	
+	</span>	
+
+
+	
+	<span class="postedby">
+		<%= date_posted(review_request.created_at)%>
+	</span>
+
+	<span class="posteddate">
+		 Posted by:
+		<%= link_to review_request.user.username, user_path(review_request.user) %>
+	</span>	
 </div>
 
 

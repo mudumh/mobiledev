@@ -9,30 +9,29 @@
             style="color: rgb(222, 79, 34); font-size:24px;">
       </span> 
       <% end %>
-   
     <% else %>
     <%= link_to like_forum_thread_path(forum_thread), method: :put, class: "" do %>
       <span class="glyphicon glyphicon-arrow-up" 
             style="color: rgb(255, 133, 52);font-size:24px;">
       </span> 
       <% end %>
-    
     <%end%>
-     	
-  	
+    
   </h3>
 <% end %>
 </div>
 <div class = "row">
-	<%= date_posted(forum_thread.created_at)%>
-	<span>
+   
+  <span class="give_comment">
+    <%= link_to 'Discuss',forum_thread_path(forum_thread)  %>
+  </span>
+	 
+	<span class="postedby">
 		 posted by:
 		<%= link_to forum_thread.user.username, user_path(forum_thread.user) %>
 	</span>
-  <span>
-     
-    <%= link_to 'Discuss',forum_thread_path(forum_thread)  %>
+  <span class="posteddate">
+  <%= date_posted(forum_thread.created_at)%>
   </span>
-
 	
 </div>
