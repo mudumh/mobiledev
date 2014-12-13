@@ -7,15 +7,15 @@
 	
 		<% if tutorial.find_votes_for(:voter => current_user).size == 0 %>
   		<%= link_to like_tutorial_path(tutorial), method: :put, class: "" do %>
-    	<span class="glyphicon glyphicon-arrow-up" 
+    	<span id="upvote" class="glyphicon glyphicon-chevron-up" 
     				style="color: rgb(222, 79, 34); font-size:24px;">
     	</span> 
     	<% end %>
    
     <% else %>
     <%= link_to like_tutorial_path(tutorial), method: :put, class: "" do %>
-    	<span class="glyphicon glyphicon-arrow-up" 
-    				style="color: rgb(255, 133, 52);font-size:24px;">
+    	<span id="upvoted" class="glyphicon glyphicon-chevron-up" 
+    				style="color: rgb(204, 204, 204);font-size:24px;">
     	</span> 
       <% end %>
     <%end%>
@@ -39,3 +39,18 @@
 	</span>
 	
 </div>
+<script>
+$(function() {
+ 
+  $("span#upvote").hover(
+       function () {
+         $(this).removeAttr("style","color: rgb(212, 59, 44); font-size:24px;");
+       }, 
+      function () {
+          $(this).attr("style", "color: rgb(222, 79, 34); font-size:24px;");
+       }
+     );
+    
+});
+
+</script>
