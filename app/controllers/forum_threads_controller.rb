@@ -38,7 +38,7 @@ class ForumThreadsController < ApplicationController
     @forum_thread = ForumThread.find(params[:id])
     @forum_thread.vote_by :voter => current_user
     @forum_thread.save
-    redirect_to forum_threads_path
+    redirect_to :back
   end
 
   private

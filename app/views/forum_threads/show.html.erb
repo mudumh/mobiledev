@@ -1,14 +1,12 @@
-
+<div class="container-fluid">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Tool:</strong>
   <%= render @forum_thread  %>
-</p>
 
-
-<%= link_to 'Back', forum_threads_path %>
-
-<%= render 'comments/form'%>
-<%= render 'comments/comments'%>
+	<div class="row">
+		<%= link_to 'Back', forum_threads_path %>
+	</div>
+	<%= render 'comments/form'%>
+	<%= render 'comments/comments'%>
+</div>
 
