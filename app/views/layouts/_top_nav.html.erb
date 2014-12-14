@@ -1,20 +1,27 @@
-      <div class="row">
-        <div class="col-xs-6" >
-          <span id="logo">Mobile Devs</span>
-          <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
-            <span class="glyphicon glyphicon-th-list"></span>
-          </a>
-        </div>
-        <div class="text-right">
-          <% if user_signed_in? %>
-            Logged in as <strong><%= current_user.username %></strong>.
-            <%= link_to 'Edit profile', edit_user_registration_path %> |
-            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-          <% else %>
-            <%= link_to "Sign up", new_user_registration_path %> |
-            <%= link_to "Login", new_user_session_path %>
-          <% end %>
-       </div>
-      </div>
+
+<nav id="topnav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+     <div class="navbar-header">
+      <a class="navbar-brand hidden-xs" href="#">
+        <span id="logo">Mobile Devs</span>
+      </a>
+     </div>
+     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+      <span class="glyphicon glyphicon-th-list"></span>
+    </a>
+     <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.username %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path,
+        class: "btn btn-default navbar-btn" %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn" %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn" %> |
+      <%= link_to "Login", new_user_session_path, class: "btn btn-default navbar-btn" %>
+      <% end %>
+        
+</div>
+</nav>
+        
+   
 
  
