@@ -2,31 +2,29 @@
 <nav id="topnav" class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
      <div class="navbar-header">
-      <a class="navbar-brand hidden-xs" href="#">
+      <a class="navbar-brand " href="#">
         <span id="logo">Mobile Devs</span>
       </a>
-      <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+      <a href="#menu-toggle" class="navbar-brand visible-xs" id="menu-toggle">
       <span class="glyphicon glyphicon-th-list"></span>
       </a>
   </div>
-
-  <div class="dropdown pull-right ">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-    Profile
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-   <% if user_signed_in? %>
-    <li role="presentation"><%= link_to 'Edit profile', edit_user_registration_path%> </li>
-         
-    <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-    <%else%>
-     <li role="presentation"> <%= link_to "Sign up", new_user_registration_path %> </li>
-     <li role="presentation"> <%= link_to "Login", new_user_session_path %></li>
-    <%end%>
-  </ul>
+        <div class="dropdown pull-right ">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+        Profile
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+       <% if user_signed_in? %>
+        <li role="presentation"><%= link_to 'Edit profile', edit_user_registration_path%> </li>
+             
+        <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <%else%>
+         <li role="presentation"> <%= link_to "Sign up", new_user_registration_path %> </li>
+         <li role="presentation"> <%= link_to "Login", new_user_session_path %></li>
+        <%end%>
+      </ul>
 </div>
-
         
 </div>
 </nav>
