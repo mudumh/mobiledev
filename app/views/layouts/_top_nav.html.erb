@@ -5,19 +5,28 @@
       <a class="navbar-brand hidden-xs" href="#">
         <span id="logo">Mobile Devs</span>
       </a>
-     </div>
-     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+      <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
       <span class="glyphicon glyphicon-th-list"></span>
-    </a>
-     <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.username %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path,
-        class: "btn btn-default navbar-btn" %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn" %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn" %> |
-      <%= link_to "Login", new_user_session_path, class: "btn btn-default navbar-btn" %>
-      <% end %>
+      </a>
+  </div>
+
+  <div class="dropdown pull-right ">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Account
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+   <% if user_signed_in? %>
+    <li role="presentation"><%= link_to 'Edit profile', edit_user_registration_path%> </li>
+         
+    <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    <%else%>
+     <li role="presentation"> <%= link_to "Sign up", new_user_registration_path %> </li>
+     <li role="presentation"> <%= link_to "Login", new_user_session_path %></li>
+    <%end%>
+  </ul>
+</div>
+
         
 </div>
 </nav>
