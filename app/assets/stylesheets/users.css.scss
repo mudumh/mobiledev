@@ -9,3 +9,12 @@
 	-moz-border-radius: 150px;
 	
 	}
+html{
+	height:100%;
+}
+body, div#wrapper,div#page-content-wrapper,div.userprofile{
+height:100%;	
+}
+div.user_header{
+  height:50%;
+}

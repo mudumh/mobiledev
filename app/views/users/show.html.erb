@@ -14,41 +14,33 @@
 				
 			</span>
 	</div>
-	
-</div>
-<div class="row"></div>
+	<div class="row"></div>
 		<%= image_tag @user.image,:class=>"circular"%>
-</div>
-
-UPVOTED, COMMENTED, POSTED.
-<div class="row">
-
-<div class="col-md-3">
-	News Items
-	<%= render @user.news_items%>
-</div>
-
-<div class="col-md-3">
-	Review Requests
-	<%= render @user.review_requests%>
-</div>
-<div class="col-md-3">
-		Tools:
-		<%= render @user.tools%>
 	</div>
 
-<div class="col-md-3">
-Tutorials:
-<%= render @user.tutorials%>
+	UPVOTED, COMMENTED, POSTED.
+	<div class="row">
+
+	<div class="col-md-3">
+		News Items
+		<%= render @user.news_items%>
+	</div>
+
+	<div class="col-md-3">
+		Review Requests
+		<%= render @user.review_requests%>
+	</div>
+	<div class="col-md-3">
+			Tools:
+			<%= render @user.tools%>
+		</div>
+
+	<div class="col-md-3">
+	Tutorials:
+	<%= render @user.tutorials%>
+	</div>
+
+	</div>
+
+	
 </div>
-
-</div>
-
-
-
-
-
-
-
-
-
