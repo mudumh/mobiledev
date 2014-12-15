@@ -3,11 +3,12 @@
 		<div class ="col-md-6 col-centered">
 			<span id="username">
 				<%= @user.username%>
-			<span>	
+			</span>	
+			
 			
 			<span id="twitterlogo">
 				<%=link_to 'Follow on twitter',@user.twitter%>
-			<span>	
+			</span>	
 			<span id="linkedinlogo">
 				<%=link_to 'Linkedin', @user.linkedin%>
 				
@@ -15,6 +16,10 @@
 	</div>
 	
 </div>
+<div class="row">
+				<%= image_tag @user.image%>
+</div>
+
 UPVOTED, COMMENTED, POSTED.
 <div class="row">
 
