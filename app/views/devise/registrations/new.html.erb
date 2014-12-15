@@ -23,6 +23,7 @@
     </div>
   </div>
 
+  <% if f.object.password_required? %>
   <div class="field row form-group">
     <div class="col-md-4 col-xs-8 col-centered">
     <%= f.label :password %>
@@ -33,12 +34,14 @@
     </div>
   </div>
 
+
   <div class="field row form-group">
     <div class="col-md-4 col-xs-8 col-centered">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off",class:"form-control" %>
     </div>
   </div>
+  <% end %>
   <div class="row">
     <div class="col-md-4 col-xs-8 col-centered">
       <div class="row actions form-group">
