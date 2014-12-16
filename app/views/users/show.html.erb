@@ -9,7 +9,7 @@
 			<div class ="col-md-4 ">
 				<div>
 					<% if !@user.name.nil? %>
-						<span id="username">
+						<span id="user_name">
 							<%= @user.name%>
 						</span>	
 					<%end%>
@@ -18,8 +18,8 @@
 				<div>
 					<% if !@user.twitter.nil? %>
 						<%= link_to @user.twitter,:target=>'blank' do %>
-							<span id="username">
-								<%= @user.username%>
+							<span id="twitterlink">
+								<%= "@#{@user.username}"%>
 							</span>	
 						<%end%>
 					<%else%>
