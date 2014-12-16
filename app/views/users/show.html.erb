@@ -41,27 +41,27 @@
 	</div>
 
 	<div class="row">
-
 		<div class="col-md-3">
 			News Items
-			<%= render @user.news_items%>
-		</div>
-
-		<div class="col-md-3">
-			Review Requests
-			<%= render @user.review_requests%>
-		</div>
-		
-		<div class="col-md-3">
-				Tools:
-				<%= render @user.tools%>
+			<%@news_upvoted.each do |news_item|%> 
+			<%= render news_item%>
+			<%end%>
 		</div>
 
 		<div class="col-md-3">
 			Tutorials:
-			<%= render @user.tutorials%>
+			<%@tutorials_upvoted.each do |tutorial|%> 
+			<%= render tutorial%>
+			<%end%>				
 		</div>
-
+		
+		<div class="col-md-3">
+				Tools:
+				<%@tools_upvoted.each do |tool|%> 
+			<%= render tool%>
+			<%end%>
+		</div>
+	
 	</div>
 
 </div>

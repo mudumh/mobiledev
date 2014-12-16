@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :tools
   has_many :tutorials
   has_many :forum_threads
+  acts_as_voter
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
