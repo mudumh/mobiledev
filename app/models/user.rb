@@ -16,7 +16,10 @@ class User < ActiveRecord::Base
     user.provider = auth.provider 
     user.uid      = auth.uid
     user.image = auth.info.image
+    user.name = auth.info.name
+    user.desc = auth.info.description
     user.username = auth.info.nickname
+    user.twitter = auth.info.urls.Twitter
     user.save
     end
   end

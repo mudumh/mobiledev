@@ -1,46 +1,77 @@
 <div class="container-fluid userprofile">
-	<div class="row user_header">
-		<div class ="col-md-6 col-centered">
-			<span id="username">
-				<%= @user.username%>
-			</span>	
+	<div class="user_header">
+		<div class="row">
 			
+			<div class ="col-md-2 ">
+				<%= image_tag @user.image,:class=>"circular"%>
+			</div>
 			
-			<span id="twitterlogo">
-				<%=link_to 'Follow on twitter',@user.twitter%>
-			</span>	
-			<span id="linkedinlogo">
-				<%=link_to 'Linkedin', @user.linkedin%>
+			<div class ="col-md-4 ">
+				<div>
+					<% if !@user.name.nil? %>
+						<span id="username">
+							<%= @user.name%>
+						</span>	
+					<%end%>
+				</div>	
 				
-			</span>
-	</div>
-	<div class="row"></div>
-		<%= image_tag @user.image,:class=>"circular"%>
+				<div>
+					<% if !@user.twitter.nil? %>
+						<%= link_to @user.twitter,:target=>'blank' do %>
+							<span id="username">
+								<%= @user.username%>
+							</span>	
+						<%end%>
+					<%else%>
+						<span id="username">
+								<%= @user.username%>
+						</span>	
+					<%end%>
+				</div>
+				<div>
+					<% if !@user.linkedin.nil?%>
+						<span id="linkedinlogo">
+							<%=link_to 'Linkedin', @user.linkedin%>	
+						</span>
+					<%end%>
+				</div>
+				
+			</div>
+		</div>
 	</div>
 
-	UPVOTED, COMMENTED, POSTED.
 	<div class="row">
 
-	<div class="col-md-3">
-		News Items
-		<%= render @user.news_items%>
-	</div>
-
-	<div class="col-md-3">
-		Review Requests
-		<%= render @user.review_requests%>
-	</div>
-	<div class="col-md-3">
-			Tools:
-			<%= render @user.tools%>
+		<div class="col-md-3">
+			News Items
+			<%= render @user.news_items%>
 		</div>
 
-	<div class="col-md-3">
-	Tutorials:
-	<%= render @user.tutorials%>
-	</div>
+		<div class="col-md-3">
+			Review Requests
+			<%= render @user.review_requests%>
+		</div>
+		
+		<div class="col-md-3">
+				Tools:
+				<%= render @user.tools%>
+		</div>
+
+		<div class="col-md-3">
+			Tutorials:
+			<%= render @user.tutorials%>
+		</div>
 
 	</div>
+
+</div>
 
 	
-</div>
+
+				
+	
+	
+		
+	
+
+

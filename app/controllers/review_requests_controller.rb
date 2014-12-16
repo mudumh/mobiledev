@@ -20,7 +20,7 @@ class ReviewRequestsController < ApplicationController
       
     end  
     if @review_requests.length == 0 
-          flash[:notice] = 'No requests for this platform'
+          flash.now[:notice] = 'No requests for this platform'
     end
   end
   
