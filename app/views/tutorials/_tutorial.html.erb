@@ -4,7 +4,7 @@
 	<%= link_to tutorial.url,:target=>"blank" do %>
   <h3>
   	<%= tutorial.title%> 
-  	<%= tutorial.get_upvotes.size %>	
+  	
 	
 		<% if tutorial.find_votes_for(:voter => current_user).size == 0 %>
   		<%= link_to like_tutorial_path(tutorial), method: :put, class: "" do %>
@@ -45,6 +45,11 @@
     
 	 <%=date_posted(tutorial.created_at)%>
 	</span>
+  <span class="upvotes">
+    Upvotes:
+    <%= tutorial.get_upvotes.size %>  
+  </span>
+  
 	</div>
 
 </div>

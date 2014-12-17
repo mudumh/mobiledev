@@ -1,12 +1,12 @@
 <div class="container-fluid">
-	<div class= "row">
-		<%= link_to 'Back', tools_path %>
-	</div>
-
 	
-	<p id="notice"><%= notice %></p>
+	
   	<%= render @tool  %>
-	
+  <div class= "row">
+		<div class="col-md-2 ">
+		<%= link_to 'Back', tools_path %>
+		</div>
+	</div>
 
 <%= render 'comments/form'%>
 <%= render 'comments/comments'%>

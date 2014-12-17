@@ -1,4 +1,6 @@
 <div class="row">
+	<div class="col-md-12">
 <%= simple_format comment.content %>
 <%= link_to 'reply',[:new, @commentable, :comment,:parent_id => comment]%>
+	</div>
 </div>

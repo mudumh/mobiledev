@@ -4,7 +4,7 @@
 
   <h3>
   	<%= news_item.title %> 
-  	<%= news_item.get_upvotes.size %>
+  	
   	<% if news_item.find_votes_for(:voter => current_user).size == 0 %>
   		<%= link_to like_news_item_path(news_item), method: :put, class: "" do %>
     	<span id="upvote" class="glyphicon glyphicon-chevron-up" 
@@ -42,6 +42,10 @@
   <span class="posteddate">
     
     <%= date_posted(news_item.created_at)%>
+  </span>
+  <span class="upvotes">
+    Upvotes:
+    <%= news_item.get_upvotes.size %>
   </span>
 </div>
 

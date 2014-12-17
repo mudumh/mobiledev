@@ -1,8 +1,9 @@
 <div class="row">
+  <div class="col-md-10 ">
 <%= link_to forum_thread do %>
   <h3>
   	<%= forum_thread.subject %> 
-  	<%= forum_thread.get_upvotes.size %> 
+  	
     <% if forum_thread.find_votes_for(:voter => current_user).size == 0 %>
       <%= link_to like_forum_thread_path(forum_thread), method: :put, class: "" do %>
       <span id="upvote" class="glyphicon glyphicon-chevron-up" 
@@ -20,7 +21,14 @@
   </h3>
 <% end %>
 </div>
+<div class="col-md-2">
+     <%= link_to user_path(forum_thread.user) do %>
+        <%= image_tag forum_thread.user.image,:class=>"circular_small"%>
+     <%end%>
+  </div>
+</div>
 <div class = "row">
+  <div class="col-md-10 ">
    
   <span class="give_comment">
     <%= link_to 'Discuss',forum_thread_path(forum_thread)  %>
@@ -33,8 +41,15 @@
   <span class="posteddate">
   <%= date_posted(forum_thread.created_at)%>
   </span>
-	
+  <span class="posteddate">
+    Upvotes:
+  <%= forum_thread.get_upvotes.size %> 
+  </span>
+  
+	</div>
+
 </div>
+<div class="hr"><hr /></div>  
 
 <script>
 $(function() {
