@@ -7,21 +7,23 @@
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
-	
 	}
+
 html{
 	height:100%;
 }
+
 body, div#wrapper,div#page-content-wrapper,div.userprofile{
 height:100%;	
 }
 div.user_header{
   height:50%;
 }
+
 span#user_name{
 	font-size:24px;
-	
-}
+}	
+
 span#twitterlink{
 font-size:24px;
 	
@@ -29,8 +31,8 @@ font-size:24px;
 .circular_small {
 	width: 40px;
 	height: 40px;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
 	margin-top:20px;
 	}

@@ -1,28 +1,38 @@
 <div class="row">
-<%= link_to tool.url,:target=>"blank" do %>
-  <h3>
-  	<%= tool.title%> 
-  	<%= tool.get_upvotes.size %>
-    <% if tool.find_votes_for(:voter => current_user).size == 0 %>
-      <%= link_to like_tool_path(tool), method: :put, class: "" do %>
-      <span id="upvote" class="glyphicon glyphicon-chevron-up"
-            style="color: rgb(222, 79, 34); font-size:24px;">
-      </span> 
-      <% end %>
-   
-    <% else %>
-    <%= link_to like_tool_path(tool), method: :put, class: "" do %>
-      <span id="upvoted" class="glyphicon glyphicon-chevron-up" 
-            style="color: rgb(204, 204, 204);font-size:24px;">
-      </span> 
-      <% end %>
-    
-    <%end%>
-  </h3>
-<% end %>
+  <div class="col-md-10 ">
+    <%= link_to tool.url,:target=>"blank" do %>
+      <h3>
+      	<%= tool.title%> 
+      	<%= tool.get_upvotes.size %>
+        <% if tool.find_votes_for(:voter => current_user).size == 0 %>
+          <%= link_to like_tool_path(tool), method: :put, class: "" do %>
+          <span id="upvote" class="glyphicon glyphicon-chevron-up"
+                style="color: rgb(222, 79, 34); font-size:24px;">
+          </span> 
+          <% end %>
+       
+        <% else %>
+        <%= link_to like_tool_path(tool), method: :put, class: "" do %>
+          <span id="upvoted" class="glyphicon glyphicon-chevron-up" 
+                style="color: rgb(204, 204, 204);font-size:24px;">
+          </span> 
+          <% end %>
+        
+        <%end%>
+      </h3>
+    <% end %>
+  </div>
+  
+  <div class="col-md-2">
+   <%= link_to user_path(tool.user) do %>
+      <%= image_tag tool.user.image,:class=>"circular_small"%>
+   <%end%>
+  </div>
+
 </div>
 
 <div class = "row">
+  <div class="col-md-10 ">
   <span class="give_comment">
     <%= link_to 'Discuss',tool_path(tool)  %>
   </span>
@@ -36,8 +46,9 @@
 	 <%=date_posted(tool.created_at)%>
   </span> 
 
-	
+	</div>
 </div>
+<div class="hr"><hr /></div>  
 <script>
 $(function() {
  
