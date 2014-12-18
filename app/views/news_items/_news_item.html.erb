@@ -1,5 +1,5 @@
 <div class = "row">
-  <div class="col-md-10 ">
+  <div class="col-md-10 col-xs-10">
 	<%= link_to news_item.url, :target => "_blank" do %>
 
   <h3>
@@ -22,7 +22,7 @@
 	<%end%>
 </div>
 
-  <div class="col-md-2">
+  <div class="col-md-2 col-xs-2">
      <%= link_to user_path(news_item.user), class: "tag-tooltip",
       :data => {:toggle=>"tooltip"},'data-original-title' => "#{news_item.user.username}",
       'data-placement' => 'right'  do %>                  
@@ -35,7 +35,7 @@
 </div>
 
 <div class = "row">
-  <div class="col-md-10 ">
+  <div class="col-md-10 col-xs-10">
   <span class="give_comment">
      <%= link_to 'Discuss',news_item_path(news_item)  %>
   </span>
