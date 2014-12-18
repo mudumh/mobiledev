@@ -16,6 +16,7 @@
       </button>
       <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
        <% if user_signed_in? %>
+       <li role="presentation"><%= link_to 'My Profile', user_path(current_user)%> </li>
         <li role="presentation"><%= link_to 'Edit profile', edit_user_registration_path%> </li>
              
         <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>

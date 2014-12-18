@@ -55,13 +55,45 @@
 		</div>
 
 	</div>
-	<div class="row">
-		<%if !@comments.nil?%>
-			<div class="col-md-12">
-				<%= render @comments%>
-			</div>
-		<%end%>
+	<%if params[:s] == 'comments'%>
+		<div class="row">
+			<%if !@comments.nil? && @comments.length != 0 %>
+				<div class="col-md-12">
+					<%= render @comments%>
+				</div>
+			<%else%>
+				<div class="col-md-12">
+					No comments posted
+				</div>
+			<%end%>
+		</div>
+	<%elsif params[:s] == 'upvotes'%>
+			<%if @user.votes.up.size == 0%>
+					No Upvotes
+			<%else%>
 
-
-</div>
+				<div class="row">
+					<!-- put this in a view helper-->
+				<%if !@tools_upvoted.nil? && @tools_upvoted.length != 0%>
+					<div class="col-md-12">
+						Tools:
+						<%= render @tools_upvoted%>
+					</div>
+				<%end%>
+					<%if !@news_upvoted.nil? && @news_upvoted.length != 0%>
+					<div class="col-md-12">
+						News:
+						<%= render @news_upvoted%>
+					</div>
+					<%end%>
+				<%if !@tutorials_upvoted.nil? && @tutorials_upvoted.length != 0%>
+					<div class="col-md-12">
+						Tutorials:
+						<%= render @tutorials_upvoted%>
+					</div>
+				<%end%>
+		 
+		 </div>
+		<%end%>	
+	<%end%>
 

@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
   end
 
   def new
-
     @comment = @commentable.comments.new(:parent_id => params[:parent_id])
   end
 
@@ -14,7 +13,8 @@ class CommentsController < ApplicationController
     
     @comment = @commentable.comments.new(comment_params)
     @comment.parent_id = comment_params[:parent_id]
-    
+    @comment.user_id = current_user.id  
+
     if @comment.save
       redirect_to @commentable, notice: "Comment created."
     else

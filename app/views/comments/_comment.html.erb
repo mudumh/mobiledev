@@ -1,6 +1,11 @@
 <div class="row">
 	<div class="col-md-12">
 <%= simple_format comment.content %>
-<%= link_to 'reply',[:new, @commentable, :comment,:parent_id => comment]%>
+<% if params[:s].nil?%>
+	<%= link_to 'reply',[:new, @commentable, :comment,:parent_id => comment]%>
+	<%= link_to comment.user.username, user_path(comment.user.username) %>
+<% end%>
+ 
+
 	</div>
 </div>
