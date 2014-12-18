@@ -41,38 +41,27 @@
 	</div>
 
 	<div class="row">
-		<div class="col-md-3">
-			Comments
+		
+		<div class="col-md-1">
+			<%= link_to'Comments',user_path(@user,:s=>'comments')%>
 		</div>
-		<div class="col-md-3">
-			Upvotes
+		
+		<div class="col-md-1">
+			<%= link_to'Upvotes',user_path(@user,:s=>'upvotes')%>
 		</div>
-		<div class="col-md-3">
+
+		<div class="col-md-1">
 			Submissions
 		</div>
 
-		<div class="col-md-3">
-			News Items
-			<%@news_upvoted.each do |news_item|%> 
-			<%= render news_item%>
-			<%end%>
-		</div>
-
-		<div class="col-md-3">
-			Tutorials:
-			<%@tutorials_upvoted.each do |tutorial|%> 
-			<%= render tutorial%>
-			<%end%>				
-		</div>
-		
-		<div class="col-md-3">
-				Tools:
-				<%@tools_upvoted.each do |tool|%> 
-			<%= render tool%>
-			<%end%>
-		</div>
-	
 	</div>
+	<div class="row">
+		<%if !@comments.nil?%>
+			<div class="col-md-12">
+				<%= render @comments%>
+			</div>
+		<%end%>
+
 
 </div>
 
