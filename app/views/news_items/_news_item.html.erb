@@ -23,8 +23,13 @@
 </div>
 
   <div class="col-md-2">
-     <%= link_to user_path(news_item.user) do %>
-        <%= image_tag news_item.user.image,:class=>"circular_small"%>
+     <%= link_to user_path(news_item.user), class: "tag-tooltip",
+      :data => {:toggle=>"tooltip"},'data-original-title' => "#{news_item.user.username}",
+      'data-placement' => 'right'  do %>                  
+                     
+        <%= image_tag news_item.user.image,:class=>"circular_small"
+
+        %>
      <%end%>
   </div>
 </div>
@@ -36,7 +41,8 @@
   </span>
 	<span class="postedby">
 		 Posted by:
-		 <%= link_to news_item.user.username, user_path(news_item.user) %>
+		 <%= link_to news_item.user.username, user_path(news_item.user)
+       %>
 	</span>
 
   <span class="posteddate">

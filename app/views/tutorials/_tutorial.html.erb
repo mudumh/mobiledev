@@ -25,7 +25,9 @@
   <% end %>
   </div>
     <div class="col-md-2">
-     <%= link_to user_path(tutorial.user) do %>
+     <%= link_to user_path(tutorial.user), class: "tag-tooltip",
+      :data => {:toggle=>"tooltip"},'data-original-title' => "#{tutorial.user.username}",
+      'data-placement' => 'right' do %>
         <%= image_tag tutorial.user.image,:class=>"circular_small"%>
      <%end%>
   </div>
@@ -69,3 +71,4 @@ $(function() {
 });
 
 </script>
+
