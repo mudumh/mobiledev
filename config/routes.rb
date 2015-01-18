@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  resources :submissions
+
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   root to: "news_items#index"
 

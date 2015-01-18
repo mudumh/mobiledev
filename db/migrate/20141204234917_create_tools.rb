@@ -3,7 +3,7 @@ class CreateTools < ActiveRecord::Migration
     create_table :tools do |t|
       t.string :title
       t.string :url
-      t.text :desc
+      t.string :description
 
       t.timestamps
     end
