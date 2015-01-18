@@ -45,28 +45,6 @@ ActiveRecord::Schema.define(version: 20141218182956) do
     t.integer  "user_id"
   end
 
-  create_table "review_requests", force: true do |t|
-    t.text     "feedback_request"
-    t.string   "title"
-    t.string   "url"
-    t.string   "platform"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  create_table "review_responses", force: true do |t|
-    t.integer  "aesthetics"
-    t.integer  "easeofuse"
-    t.integer  "responsiveness"
-    t.integer  "functionality"
-    t.integer  "innovativeness"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "review_request_id"
-    t.text     "feedback"
-  end
-
   create_table "tools", force: true do |t|
     t.string   "title"
     t.string   "url"

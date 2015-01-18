@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates_uniqueness_of :username
   has_many :news_items
-  has_many :review_requests
+  
   has_many :tools
   has_many :tutorials
   has_many :forum_threads
