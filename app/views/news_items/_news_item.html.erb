@@ -21,6 +21,11 @@
   </h3>
 	<%end%>
 </div>
+  <%= link_to collections_path(:item_type => "news",:item_id=> news_item.id), class: "" do %>
+          <span id="upvoted" class="glyphicon glyphicon-plus" 
+                style="color: rgb(204, 204, 204);font-size:24px;">
+          </span> 
+  <% end %>
 
   <div class="col-md-2 col-xs-2">
      <%= link_to user_path(news_item.user), class: "tag-tooltip",

@@ -21,6 +21,11 @@
         <%end%>
       </h3>
     <% end %>
+    <%= link_to collections_path(:item_type => "tool",:item_id=> tool.id), class: "" do %>
+          <span id="upvoted" class="glyphicon glyphicon-plus" 
+                style="color: rgb(204, 204, 204);font-size:24px;">
+          </span> 
+  <% end %>
   </div>
   
   <div class="col-md-2">

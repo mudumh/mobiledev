@@ -1,4 +1,5 @@
 class ToolsController < ApplicationController
+  
   before_filter :authenticate_user!, :except => [:index,:show]
   def new
     @tool = current_user.tools.new
@@ -37,6 +38,7 @@ class ToolsController < ApplicationController
     @tool.save
     redirect_to tools_path
   end
+
 
   private
   
