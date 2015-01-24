@@ -6,6 +6,7 @@ class ToolsController < ApplicationController
   end
 
   def index
+    
     if params[:query]
       @tools = Tool.text_search(params[:query])
     else
