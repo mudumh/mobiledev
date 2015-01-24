@@ -24,8 +24,8 @@
     </h3>
   <% end %>
 
-      <%= link_to collections_path(:item_type => "tutorial",:item_id=> tutorial.id), class: "" do %>
-          <span id="upvoted" class="glyphicon glyphicon-plus" 
+      <%= link_to collections_path(:item_type => "tutorial",:item_id=> tutorial.id), remote: true, class: "" do %>
+          <span id="addcollection" class="glyphicon glyphicon-plus" 
                 style="color: rgb(204, 204, 204);font-size:24px;">
           </span> 
   <% end %>
@@ -64,7 +64,8 @@
 <div class="hr"><hr /></div>  
 <script>
 $(function() {
- 
+
+
   $("span#upvote").hover(
        function () {
          $(this).removeAttr("style","color: rgb(212, 59, 44); font-size:24px;");

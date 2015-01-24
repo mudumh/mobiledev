@@ -1,14 +1,14 @@
 class CollectionsController < ApplicationController
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :except => [:index,:show]
-  respond_to :html
+  respond_to :html,:js
 
   def index
     
     @item_type = params[:item_type]
     @item_id = params[:item_id]
     @collections = Collection.all
-    respond_with(@collections)
+    
   end
 
   def show

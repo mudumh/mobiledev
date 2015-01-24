@@ -1,0 +1,10 @@
+<tr>
+        
+        <td><%= collection.user_id %></td>
+        <td><%= collection.name %></td>
+        <td><%= link_to 'Add',collection_collection_items_path(collection,
+        :item_type => @item_type,:item_id=> @item_id),method: :post %></td>
+        <td><%= link_to 'Show', collection %></td>
+        <td><%= link_to 'Edit', edit_collection_path(collection) %></td>
+        <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
