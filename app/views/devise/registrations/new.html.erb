@@ -16,32 +16,11 @@
     </div>
   </div>
 
-  <div class="row field form-group">
-    <div class="col-md-4 col-xs-8 col-centered">
-    <%= f.label :username %><br />
-    <%= f.text_field :username,class:"form-control" %>
-    </div>
-  </div>
-
-  <% if f.object.password_required? %>
-  <div class="field row form-group">
-    <div class="col-md-4 col-xs-8 col-centered">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off",class:"form-control" %>
-    </div>
-  </div>
 
 
-  <div class="field row form-group">
-    <div class="col-md-4 col-xs-8 col-centered">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off",class:"form-control" %>
-    </div>
-  </div>
-  <% end %>
+
+
+
   <div class="row">
     <div class="col-md-4 col-xs-8 col-centered">
       <div class="row actions form-group">
