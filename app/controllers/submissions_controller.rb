@@ -25,6 +25,7 @@ class SubmissionsController < ApplicationController
     if @submission.save
       if @submission.category == "news"
           news_params = submission_params.except(:category)
+          byebug
           @news_item = current_user.news_items.create(news_params)
           redirect_to news_items_path
       
