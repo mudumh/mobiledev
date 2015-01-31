@@ -4,7 +4,8 @@ class CreateNewsItems < ActiveRecord::Migration
       t.string :title
       t.string :url
       t.integer :upvotes
-      t.string :description
+      t.text :description
+     
 
       t.timestamps
     end
